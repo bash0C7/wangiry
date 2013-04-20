@@ -1,5 +1,12 @@
 #!/usr/bin/env ruby
-
 require_relative '../lib/wangiry'
+require 'json'
 
-Wangiry.call
+if ARGV.size.zero?
+  STDERR.puts "usage: #{__FILE__} SETTING_FILE"
+  exit 1
+end
+
+setting = JSON.parse(File.read(ARGV.shift))
+Wangiry.call setting['ACCOUNT_SID'], setting['AUTH_TOKEN'], setting['FROM_NUMBER'], setting['TO_NUMBER'], setting['URL'], setting['CALLING_TIME']
+
