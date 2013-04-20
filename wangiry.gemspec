@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["koshiba+github@4038nullpointer.com"]
   spec.description   = 'call telephone and cancel after several seconds(say WAN GIRI in Japan)'
   spec.summary       = 'call functon using Twilio'
-  spec.homepage      = "d.hatena.ne.jp/bash0C7"
+  spec.homepage      = "http://d.hatena.ne.jp/bash0C7"
   spec.license       = "Ruby's"
 
   spec.files         = `git ls-files`.split($/)
