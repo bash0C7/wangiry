@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.version       = Wangiry::VERSION
   spec.authors       = ["bash0C7"]
   spec.email         = ["koshiba+github@4038nullpointer.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.description   = 'call telephone and cancel after several seconds(say WAN GIRI in Japan)'
+  spec.summary       = 'call functon using Twilio'
+  spec.homepage      = "d.hatena.ne.jp/bash0C7"
+  spec.license       = "Ruby's"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }

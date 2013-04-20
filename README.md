@@ -1,6 +1,6 @@
 # Wangiry
 
-TODO: Write a gem description
+call telephone and cancel after several seconds(say WAN GIRI in Japan)
 
 ## Installation
 
@@ -16,9 +16,38 @@ Or install it yourself as:
 
     $ gem install wangiry
 
+### get Twilio account
+
+http://kddi-web.twilio.jp/ (Japanese)
+
+### write setting file
+
+setting file(json file) save your favolite path!
+
+````js
+{
+  "ACCOUNT_SID": "xxxx",
+  "AUTH_TOKEN": "xxxx",
+  "FROM_NUMBER": "+xxx",
+  "TO_NUMBER": "+xxxx",
+  "URL": "http://example.com",
+  "CALLING_TIME": x
+}
+````
+
+- Twilio's account info: ACCOUNT_SID, AUTH_TOKEN
+- Twilio's telephone number: FROM_NUMBER
+- call number: TO_NUMBER
+- some URL(RECOMMEND: your website): URL
+- calling time(sec): CALLING_TIME
+
 ## Usage
 
-TODO: Write usage instructions here
+````sh
+wangiry SETTING_FILE
+````
+
+ARGV.first: your setting file
 
 ## Contributing
 
