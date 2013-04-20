@@ -1,5 +1,8 @@
-require "wangiry/version"
-
 module Wangiry
-  # Your code goes here...
+  require_relative "./wangiry/version"
+
+  def self.call
+
+
+  end
 end
