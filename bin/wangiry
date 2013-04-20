@@ -4,6 +4,7 @@ require 'json'
 
 if ARGV.size.zero?
   STDERR.puts "usage: #{__FILE__} SETTING_FILE"
+  STDERR.puts "How to write SETTING_FILE: see https://github.com/bash0C7/wangiry#write-setting-file"
   exit 1
 end
 
