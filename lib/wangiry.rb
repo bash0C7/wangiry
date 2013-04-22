@@ -9,5 +9,7 @@ module Wangiry
     account = client.account
     #calling #{calling_time} sec
     call = account.calls.create({:from => from_number, :to => to_number, :url => url, :timeout => calling_time})
+    #cancel if over calling_time
+    call.tap {|t| sleep(calling_time)}.cancel
   end
 end
