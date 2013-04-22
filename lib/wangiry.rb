@@ -7,8 +7,7 @@ module Wangiry
 
     client = Twilio::REST::Client.new(account_sid, auth_token)
     account = client.account
-    call = account.calls.create({:from => from_number, :to => to_number, :url => url})
-    #cancel if over calling_time
-    call.tap {|t| sleep(calling_time)}.cancel
+    #calling #{calling_time} sec
+    call = account.calls.create({:from => from_number, :to => to_number, :url => url, :timeout => calling_time})
   end
 end
