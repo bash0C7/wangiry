@@ -1,13 +1,20 @@
 #!/usr/bin/env ruby
-require_relative '../lib/wangiry'
+require 'wangiry'
 require 'json'
 
-if ARGV.size.zero?
+if ARGV.first == '--help'
   STDERR.puts "usage: #{__FILE__} SETTING_FILE"
   STDERR.puts "How to write SETTING_FILE: see https://github.com/bash0C7/wangiry#write-setting-file"
   exit 1
 end
 
-setting = JSON.parse(File.read(ARGV.shift))
-Wangiry.call setting['ACCOUNT_SID'], setting['AUTH_TOKEN'], setting['FROM_NUMBER'], setting['TO_NUMBER'], setting['URL'], setting['CALLING_TIME']
+setting = JSON.parse(File.read(ARGV.shift)) unless ARGV.size.zero?
+setting ||= {}
+setting['ACCOUNT_SID'] ||= ENV['WANGIRY_ACCOUNT_SID']
+setting['AUTH_TOKEN'] ||= ENV['WANGIRY_AUTH_TOKEN']
+setting['FROM_NUMBER'] ||= ENV['WANGIRY_FROM_NUMBER']
+setting['TO_NUMBER'] ||= ENV['WANGIRY_TO_NUMBER']
+setting['URL'] ||= ENV['WANGIRY_URL']
+setting['CALLING_TIME'] ||= ENV['WANGIRY_CALLING_TIME']
 
+Wangiry.call setting['ACCOUNT_SID'].to_s, setting['AUTH_TOKEN'].to_s, setting['FROM_NUMBER'].to_s, setting['TO_NUMBER'].to_s, setting['URL'].to_s, setting['CALLING_TIME'].to_i

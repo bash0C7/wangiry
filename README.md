@@ -20,10 +20,13 @@ Or install it yourself as:
 
 http://kddi-web.twilio.jp/ (Japanese)
 
-### write setting file
+### settings
+
+#### pattern1. write setting file
 
 setting file(json file) save your favolite path!
 
+example
 ````js
 {
   "ACCOUNT_SID": "xxxx",
@@ -41,13 +44,34 @@ setting file(json file) save your favolite path!
 - some URL(RECOMMEND: your website): URL
 - calling time(sec): CALLING_TIME
 
+#### pattern2. 
+
+set env
+
+````sh
+export WANGIRY_ACCOUNT_SID=xxxx
+export WANGIRY_AUTH_TOKEN=xxxx
+export WANGIRY_FROM_NUMBER='+xxx'
+export WANGIRY_TO_NUMBER='+xxx'
+export WANGIRY_URL='http://example.com'
+export WANGIRY_CALLING_TIME=x
+````
+
 ## Usage
 
+### pattern1
 ````sh
 wangiry SETTING_FILE
 ````
 
 ARGV.first: your setting file
+
+### pattern2
+
+````sh
+wangiry
+````
+use settings in env
 
 ## Contributing
 
